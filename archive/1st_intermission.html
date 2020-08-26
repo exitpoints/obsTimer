@@ -1,0 +1,185 @@
+<!-- Copyright Danielh90 2015. All Rights Reserved. --> 
+<!DOCTYPE html>
+<html> 
+    <script
+  src="https://code.jquery.com/jquery-3.5.0.js"
+  integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc="
+  crossorigin="anonymous"></script>
+
+	<head> 
+		<title> 1st Intermission </title>
+			<link href="css/main.css" rel="stylesheet" type="text/css"> 
+
+		</head>
+	<body> 
+		<center><div class="wrapper"> 
+	<div class="timer"> 
+            <p><h1>Exit Points #6 - 1st Intermission</h1 ></p>
+                <p><h2>Contribute to the musicians' tip jar at www.exitpoints.stream</h2></p>
+                <br>
+                    <p><h3>If you want to play in the 3rd set, go to www.exitpoints.live/#openJam</h3 ></p>
+        
+
+        <table>
+            <tr>
+                <th>
+                    <span id="time"></span>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div id="slideshow">
+                        <div>
+                            <img src="ep6.png" alt="mustang.jpg" width="150%" height="150%"><br>
+                            <!-- A newer Mustang. -->
+                        </div>
+                        <div>
+                            <img src="EP6.png" alt="camaro.jpg" width="150%" height="150%"><br>
+                            <!-- A modern Camaro. -->
+                        </div>
+                        <!-- <div>
+                            <img src="ep3-3.png" alt="classic.jpg" width="150%" height="150%"><br>
+                            An oldie but a goodie!
+                        </div> -->
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+<!-- <p id="days"></p>
+<p id="hours"></p>
+<p id="mins"></p>
+<p id="secs"></p>
+<h2 id="end"></h2> -->
+
+
+  
+
+<script type="text/javascript">
+
+$("#slideshow > div:gt(0)").hide();
+
+setInterval(function() { 
+  $('#slideshow > div:first')
+    .fadeOut(1000)
+    .next()
+    .fadeIn(500)
+    .end()
+    .appendTo('#slideshow');
+},  4000);
+
+var countDownDate = new Date("July 29, 2020 21:00:00").getTime();
+
+display = document.querySelector('#time');
+
+// Run myfunc every second
+var myfunc = setInterval(function() {
+
+var now = new Date().getTime();
+var timeleft = countDownDate - now;
+    
+// Calculating the days, hours, minutes and seconds left
+// var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+    
+display.textContent = hours + ":" + minutes + ":" + seconds;
+
+// Result is output to the specific element
+// document.getElementById("days").innerHTML = days + "d "
+document.getElementById("hours").innerHTML = hours + "h " 
+document.getElementById("mins").innerHTML = minutes + "m " 
+document.getElementById("secs").innerHTML = seconds + "s " 
+    
+// Display the message when countdown is over
+if (timeleft < 0) {
+    clearInterval(myfunc);
+    // document.getElementById("days").innerHTML = ""
+    document.getElementById("hours").innerHTML = "" 
+    document.getElementById("mins").innerHTML = ""
+    document.getElementById("secs").innerHTML = ""
+    document.getElementById("end").innerHTML = "Going Live Asap!!";
+}
+}, 1000);
+
+//
+// function startTimer(duration, display) {
+//     var timer = duration, minutes, seconds;
+//     setInterval(function () {
+//         minutes = parseInt(timer / 60, 10);
+//         seconds = parseInt(timer % 60, 10);
+//         minutes = minutes < 10 ? "0" + minutes : minutes;
+//         seconds = seconds < 10 ? "0" + seconds : seconds;
+
+//         display.textContent = minutes + ":" + seconds;
+
+//         if (--timer < 0) {
+//             timer = duration;
+//         }
+//     }, 1000);
+// }
+
+// window.onload = function () {
+//         //Change TIME!
+//     var fiveMinutes = 60 * 5, //Change the timer here! (60 * Number)
+//         display = document.querySelector('#time');
+//     startTimer(fiveMinutes, display);
+// };
+</script></center> 
+ </div> 
+</div></center> 
+		</body>
+    </html>
+    
+    <!-- <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+p {
+  display: inline;
+  font-size: 40px;
+  margin-top: 0px;
+}
+</style>
+</head>
+<body>
+    <p id="days"></p>
+    <p id="hours"></p>
+    <p id="mins"></p>
+    <p id="secs"></p>
+    <h2 id="end"></h2>
+    <script>
+    // The data/time we want to countdown to
+    var countDownDate = new Date("Jul 25, 2021 16:37:52").getTime();
+
+    // Run myfunc every second
+    var myfunc = setInterval(function() {
+
+    var now = new Date().getTime();
+    var timeleft = countDownDate - now;
+        
+    // Calculating the days, hours, minutes and seconds left
+    var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+        
+    // Result is output to the specific element
+    document.getElementById("days").innerHTML = days + "d "
+    document.getElementById("hours").innerHTML = hours + "h " 
+    document.getElementById("mins").innerHTML = minutes + "m " 
+    document.getElementById("secs").innerHTML = seconds + "s " 
+        
+    // Display the message when countdown is over
+    if (timeleft < 0) {
+        clearInterval(myfunc);
+        document.getElementById("days").innerHTML = ""
+        document.getElementById("hours").innerHTML = "" 
+        document.getElementById("mins").innerHTML = ""
+        document.getElementById("secs").innerHTML = ""
+        document.getElementById("end").innerHTML = "TIME UP!!";
+    }
+    }, 1000);
+    </script>
+</body>
+</html> -->
